@@ -17,11 +17,13 @@ void draw(){
 class Particle{
   
   double myX, myY, myAngle, mySpeed;
+  int myColor;
   Particle(){
     myAngle = (Math.random()*(10*Math.PI));
     mySpeed = Math.random()*2;
     myX = 400;
     myY = 300;
+    myColor = color((float)Math.random()*256,(float)Math.random()*256,(float)Math.random()*256);
   }
   void move(){
     myX = myX + (Math.cos(myAngle))*mySpeed;
@@ -29,7 +31,7 @@ class Particle{
   }
   void show(){
     noStroke();
-    fill((float)Math.random()*256,(float)Math.random()*256,(float)Math.random()*256);
+    fill(myColor);
     ellipse((float)myX,(float)myY,2,2);
   }
 }
